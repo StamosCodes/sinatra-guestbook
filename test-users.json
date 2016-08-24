@@ -1,0 +1,84 @@
+{
+  "guests": [
+    {
+      "name": "Cain Marko",
+      "email": "cmarko@xmen.com"
+    },
+    {
+      "name": "Rudy Littlegye",
+      "email": "rudy@notredame.edu"
+    },
+    {
+      "email": "carlie@maybe.com",
+      "name": "Carlie Fiorina"
+    },
+    {
+      "email": "stamos1@gmail.com",
+      "name": "Stamos1"
+    },
+    {
+      "email": "stamos2@gmail.com",
+      "name": "stamos2"
+    },
+    {
+      "email": "stamos3@gmail.com",
+      "name": "stamos3"
+    },
+    {
+      "email": "stamos4@gmail.com",
+      "name": "Stamos5"
+    },
+    {
+      "email": "foti@gmail.com",
+      "name": "fotiusername"
+    },
+    {
+      "email": "tester@gmail.com",
+      "name": "Tester"
+    },
+    {
+      "email": "orange@gmail.com",
+      "name": "orange"
+    },
+    {
+      "email": "hi@gmail.com",
+      "name": "himan"
+    },
+    {
+      "email": "sesame@gmail.com",
+      "name": "open"
+    },
+    {
+      "email": "holdup@gmail.com",
+      "name": "holdup"
+    },
+    {
+      "email": "yup@gmail.com",
+      "name": "yup"
+    },
+    {
+      "email": "booo@gmail.com",
+      "name": "booo"
+    },
+    {
+      "email": "booo@gmail.com",
+      "name": "booo"
+    },
+    {
+      "email": "booo@gmail.com",
+      "name": "booo"
+    },
+    {
+      "email": "roo@gmail.com",
+      "name": "roo"
+    },
+    {
+      "email": "too@gmail.com",
+      "name": "too"
+    },
+    {
+      "email": "foogod@gmail.com",
+      "name": "foogod"
+    }
+  ]
+}

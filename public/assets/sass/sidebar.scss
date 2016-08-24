@@ -1,0 +1,38 @@
+// Sidebar Left
+main .sidebar-left form {
+	margin-bottom:20px;
+	padding:30px;
+	background:#fff;
+	border:1px solid #C3C3C3;
+  }
+
+main .sidebar-left form {
+ input {
+	width:100%;
+	margin-bottom:10px;
+  height: 50px;
+	}
+  [type=text]{
+    color:#7E7E7E;
+    width: 100%;
+    padding-left: 10px;
+  }
+  [type=submit]{
+    color:#fff;
+    background-color:#2AA070;
+    width: 50%;
+  }
+  [type=submit]:hover{
+	  box-shadow: 0 2px 0 #666, 0 2px 0 #444, 0 2px 2px rgba(0,0,0,0.9);
+  	-webkit-transform: translateY(2px);
+	  transform: translateY(2px);
+	  -webkit-animation: none;
+	  animation: none;
+  }
+}
+
+main .sidebar-left .welcome-message {
+	padding:30px;
+	background:#eaeaea;
+	border:1px solid #ccc;
+	}
