@@ -6,7 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Teachable Test</title>
     <link href="assets/css/style.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+  <style>
+  #sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+  #sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.0em; height: 30px; }
+  #sortable li span { position: absolute; margin-left: -1.3em; }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -22,7 +29,6 @@
 	    		<div class="sidebar-left col-xs-12 col-sm-4">
 
 	    			<form id="form">
-
               <h4>Please Register</h4>
 						  <input type="text" name="name" placeholder="username">
 						  <input type="text" name="email" placeholder="email">
@@ -31,10 +37,9 @@
 
     			</div>
 	    		<div class="main-content col-xs-12 col-sm-8">
-	    			<div class="registrants" id="registrants">
+	    			<div class="registrants">
 		    			<h4>Registrants</h4>
-              <p id="message"></p>
-	    			</div>
+              <div id="registrant-data"></div>
 	    		</div>
 	    	</div>
 	    </div>
@@ -42,9 +47,6 @@
     <footer>
 
     </footer>
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script>
 $('#pushSubmit').click(function(e) {
@@ -57,13 +59,37 @@ $('#pushSubmit').click(function(e) {
       data : $("#form").serialize(),
       success: function(){
         document.getElementById("form").reset();
-        $("#message").html("Now you wanna work?")
+        /*$.getJSON('/', function (data) {
+          console.log(data);
+  });*/
+        var registrantData = $('#registrant-data')
+        $.getJSON('/', function (data) {
+          console.log(data);
+
+          var guests = data.guests.map(function (guest) {
+            return guest.name + ': ' + guest.email;
+          });
+
+          registrantData.empty();
+
+          if (guests.length) {
+            var content = '<li class="ui-state-default">' + '<span class="ui-icon ui-icon-arrowthick-2-n-s">' + '</span>' + guests.join('</li><li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>') + '</li>';
+            var list = $('<ul id="sortable" />').html(content);
+            registrantData.append(list);
+          }
+
+        });
+
       },
       error: function(){
-        $("#message").html("No good")
+        $("#registrant-data").html("No good")
       }
     });
 });
+    </script>
+    <script>
+    $('#sortable').sortable('refresh');
+     $('#sortable').sortable();
     </script>
   </body>
 </html>
