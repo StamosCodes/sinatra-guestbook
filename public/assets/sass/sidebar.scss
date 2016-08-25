@@ -16,11 +16,15 @@ main .sidebar-left form {
     color:#7E7E7E;
     width: 100%;
     padding-left: 10px;
+    font-family: $montserrat;
+    font-size: 14px;
   }
   [type=submit]{
     color:#fff;
     background-color:#2AA070;
     width: 50%;
+    font-family: $montserrat;
+    font-size: 14px;
   }
   [type=submit]:hover{
 	  box-shadow: 0 2px 0 #666, 0 2px 0 #444, 0 2px 2px rgba(0,0,0,0.9);
