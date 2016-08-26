@@ -5886,5 +5886,10 @@ main .main-content .no-reg-text {
   top: 50%;
   color: #7D7D7D;
   font-family: "Montserrat", sans-serif; }
+main .main-content .removebutton {
+  padding: 0;
+  border: 0;
+  background-color: inherit;
+  float: right; }
 
 /*# sourceMappingURL=style.css.map */

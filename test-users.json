@@ -1,36 +1,5 @@
 {
   "guests": [
-    {
-      "email": "check@gmail.com",
-      "name": "Stamos Filacouris"
-    },
-    {
-      "email": "again@gmail.com",
-      "name": "Again"
-    },
-    {
-      "email": "double@gamil.com",
-      "name": "double"
-    },
-    {
-      "email": "givelook@gmail.com",
-      "name": "give a look "
-    },
-    {
-      "email": "bless@gmail.com",
-      "name": "try "
-    },
-    {
-      "email": "stamos@gmail.com",
-      "name": "stamos"
-    },
-    {
-      "email": "ia@gmail.com",
-      "name": "ibef"
-    },
-    {
-      "email": "gohead@gmail.com",
-      "name": "how di"
-    }
+
   ]
 }

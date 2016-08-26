@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Teachable Test</title>
+    <link rel="shortcut icon" href="assets/images/favicon.png" />
     <link href="assets/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -55,85 +56,6 @@
 
     </footer>
     <script src="assets/js/bootstrap.min.js"></script>
-    <script>
-// Window load get json, if empty toggle no registrants div
-$(function() {
-  $.ajax({
-      type: "GET",
-      url: "/",
-      datatype: "json",
-      //data : $("#form").serialize(),
-      success: function(){
-        // Reset input fields & declare ul variable for sorting
-        document.getElementById("form").reset();
-        var registrantData = $('#sortable');
-        // Start script to grab json
-        $.getJSON('/', function (data) {
-          console.log(data);
-
-          var guests = data.guests.map(function (guest) {
-            return guest.name + ': ' + guest.email;
-          });
-
-          registrantData.empty();
-
-          if (guests.length) {
-            var content = '<li class="ui-state-default">' + '<span class="glyphicon glyphicon-menu-hamburger">' + '</span>' + guests.join('</li><li class="ui-state-default"><span class="glyphicon glyphicon-menu-hamburger"></span>') + '</li>';
-            registrantData.append(content);
-          }
-          else {
-            $( "#no-registrants" ).toggle(true);
-          }
-          // Fire refresh after initialization to allow sorting
-         registrantData.sortable("refresh")
-        });
-      registrantData.sortable()
-      },
-});
-});
-//Submit script - post path
-$('#pushSubmit').click(function(e) {
-  e.preventDefault();
-  var inputName = $("#input-name").val();
-
-  $.ajax({
-      type: "POST",
-      url: "/",
-      datatype: "json",
-      data : $("#form").serialize(),
-      success: function(){
-        // Reset input fields & declare ul variable for sorting
-        document.getElementById("form").reset();
-        var registrantData = $('#sortable');
-
-        // Toggle false no registrants div
-        $( "#no-registrants" ).toggle(false);
-
-        // Start script for bootstrap alert
-        $(".thanks-alert").html('<div class="alert alert-success alert-dismissable" role="alert">' + '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' + '<span aria-hidden="true">&times;</span></button>' + '<p>Thanks for registering ' + inputName + '</p></div>');
-        // Start script for adding users to json
-        $.getJSON('/', function (data) {
-
-          var guests = data.guests.map(function (guest) {
-            return guest.name + ': ' + guest.email;
-          });
-
-          registrantData.empty();
-
-          if (guests.length) {
-            var content = '<li class="ui-state-default">' + '<span class="glyphicon glyphicon-menu-hamburger">' + '</span>' + guests.join('</li><li class="ui-state-default"><span class="glyphicon glyphicon-menu-hamburger"></span>') + '</li>';
-            registrantData.append(content);
-          }
-          // Fire after initialization
-         registrantData.sortable("refresh")
-        });
-      registrantData.sortable()
-      },
-      error: function(){
-        $("#sortable").html("No good")
-      }
-    });
-});
-    </script>
+    <script src="assets/js/guestbook.js"></script>
   </body>
 </html>
