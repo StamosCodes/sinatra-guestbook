@@ -4376,13 +4376,13 @@ a.thumbnail.active {
     color: inherit; }
 
 .alert-success {
-  background-color: #dff0d8;
+  background-color: #2AA070;
   border-color: #d6e9c6;
-  color: #3c763d; }
+  color: #F2F2F2; }
   .alert-success hr {
     border-top-color: #c9e2b3; }
   .alert-success .alert-link {
-    color: #2b542c; }
+    color: #d9d9d9; }
 
 .alert-info {
   background-color: #d9edf7;
@@ -5824,6 +5824,12 @@ main h4 {
   margin-bottom: 27px;
   font-family: helvetica;
   color: #4A4A4A; }
+main .thanks-alert {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  color: #fff;
+  margin-top: -20px;
+  text-align: center; }
 
 header {
   background: #4A4A4A;
@@ -5875,7 +5881,8 @@ main .sidebar-left .welcome-message {
 main .main-content .registrants {
   padding: 30px;
   background: #fff;
-  border: 1px solid #C3C3C3; }
+  border: 1px solid #C3C3C3;
+  min-height: 285px; }
 main .main-content #no-registrants {
   border: 2px dotted #C3C3C3;
   width: 100%;
@@ -5890,6 +5897,23 @@ main .main-content .removebutton {
   padding: 0;
   border: 0;
   background-color: inherit;
-  float: right; }
+  float: right;
+  font-size: 12px;
+  color: #7D7D7D; }
+  main .main-content .removebutton a:hover {
+    color: red; }
+main .main-content #sortable {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+  main .main-content #sortable li {
+    margin: 0 3px 15px 3px;
+    padding: 0.7em;
+    padding-left: 15px;
+    font-size: 1.0em;
+    height: 45px;
+    color: #7D7D7D; }
+    main .main-content #sortable li .regbump {
+      padding-right: 30px; }
 
 /*# sourceMappingURL=style.css.map */

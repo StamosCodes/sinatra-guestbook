@@ -629,8 +629,8 @@ $alert-padding:               15px !default;
 $alert-border-radius:         $border-radius-base !default;
 $alert-link-font-weight:      bold !default;
 
-$alert-success-bg:            $state-success-bg !default;
-$alert-success-text:          $state-success-text !default;
+$alert-success-bg:            $green !default;
+$alert-success-text:          #F2F2F2 !default;
 $alert-success-border:        $state-success-border !default;
 
 $alert-info-bg:               $state-info-bg !default;

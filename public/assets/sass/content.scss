@@ -4,6 +4,7 @@ main .main-content {
 		padding:30px;
 		background:#fff;
 		border:1px solid #C3C3C3;
+    min-height:285px;
 	}
 #no-registrants {
   border: 2px dotted #C3C3C3;
@@ -22,5 +23,26 @@ main .main-content {
   border: 0;
   background-color:inherit;
   float: right;
+  font-size:12px;
+  color: #7D7D7D;
+  a:hover {
+    color: red;
+  }
+}
+#sortable {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  li {
+    margin: 0 3px 15px 3px;
+    padding: 0.7em;
+    padding-left: 15px;
+    font-size: 1.0em;
+    height: 45px;
+    color:#7D7D7D;
+    .regbump {
+      padding-right:30px;
+    }
+  }
 }
 }

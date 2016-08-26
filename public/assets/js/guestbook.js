@@ -20,7 +20,7 @@ $.ajax({
       registrantData.empty();
 
       if (guests.length) {
-        var content = '<li class="ui-state-default">' + '<span class="glyphicon glyphicon-menu-hamburger">' + '</span>' + guests.join('<button class="glyphicon glyphicon-remove removebutton"></button></li><li class="ui-state-default"><span class="glyphicon glyphicon-menu-hamburger"></span>') + '<button class="glyphicon glyphicon-remove removebutton"></button></li>';
+        var content = '<li class="ui-state-default">' + '<span class="glyphicon glyphicon-menu-hamburger regbump">' + '</span>' + guests.join('<button class="glyphicon glyphicon-remove removebutton"></button></li><li class="ui-state-default"><span class="glyphicon glyphicon-menu-hamburger regbump"></span>') + '<button class="glyphicon glyphicon-remove removebutton"></button></li>';
         registrantData.append(content);
       }
       else {
@@ -53,7 +53,7 @@ $.ajax({
     $( "#no-registrants" ).toggle(false);
 
     // Start script for bootstrap alert
-    $(".thanks-alert").html('<div class="alert alert-success alert-dismissable" role="alert">' + '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' + '<span aria-hidden="true">&times;</span></button>' + '<p>Thanks for registering ' + inputName + '</p></div>');
+    $(".thanks-alert").html('<div class="alert alert-success alert-dismissable" role="alert">' + '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' + '<span aria-hidden="true">&times;</span></button>' + '<p>Thank you for registering, ' + inputName + '!</p></div>');
     // Start script for adding users to json
     $.getJSON('/', function (data) {
 
@@ -64,7 +64,7 @@ $.ajax({
       registrantData.empty();
 
       if (guests.length) {
-        var content = '<li class="ui-state-default">' + '<span class="glyphicon glyphicon-menu-hamburger">' + '</span>' + guests.join('<button class="glyphicon glyphicon-remove removebutton"></button></li><li class="ui-state-default"><span class="glyphicon glyphicon-menu-hamburger"></span>') + '<button class="glyphicon glyphicon-remove removebutton"></button></li>';
+        var content = '<li class="ui-state-default">' + '<span class="glyphicon glyphicon-menu-hamburger regbump">' + '</span>' + guests.join('<button class="glyphicon glyphicon-remove removebutton"></button></li><li class="ui-state-default"><span class="glyphicon glyphicon-menu-hamburger regbump"></span>') + '<button class="glyphicon glyphicon-remove removebutton"></button></li>';
         registrantData.append(content);
       }
       // Fire after initialization
@@ -73,17 +73,17 @@ $.ajax({
   registrantData.sortable()
   },
   error: function(){
-    $("#sortable").html("No good")
+    $("#sortable").html("Something went wrong on input, try again please")
   }
 });
 });
 // Delete script
 $(document).on('click', '.removebutton', function(){
-var $emailtestvariable = $(this).closest('li.ui-state-default').find('span.closestemail').text();
-var $emailtestvariable = $.trim($emailtestvariable.replace(/[()]/g, ''));
+var $relevantemail = $(this).closest('li.ui-state-default').find('span.closestemail').text();
+var $relevantemail = $.trim($relevantemail.replace(/[()]/g, ''));
 $.ajax({
   type: "POST",
-  url: "/" + $emailtestvariable,
+  url: "/" + $relevantemail,
   datatype: "json",
   data: {"_method":"delete"},
   success: function(){
